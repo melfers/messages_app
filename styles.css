@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+#contacts {
+  display: inline-block;
+  width: 33.33%;
+  border: solid red 1px;
+  height: 100%;
+}
+
+#messages {
+  display: inline-block;
+  float: right;
+  clear: all;
+  width: 66.66%;
+  border: solid yellow 1px;
+  height: 100%;
+}
