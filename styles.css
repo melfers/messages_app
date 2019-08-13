@@ -2,20 +2,80 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
 }
 
 #contacts {
   display: inline-block;
   width: 33.33%;
-  border: solid red 1px;
+  border: solid darkgray 0.5px;
   height: 100%;
 }
 
 #messages {
-  display: inline-block;
   float: right;
   clear: all;
   width: 66.66%;
-  border: solid yellow 1px;
-  height: 100%;
+  min-height: 100%;
+}
+
+#message-field {
+  width: 80%;
+  display: inline-block;
+  height: 25px;
+  border-radius: 10px;
+  margin: auto;
+  border: solid darkgray 0.5px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul.contact-list > li {
+  border-bottom: solid darkgray 0.5px;
+  padding: 5%;
+  max-height: 100px;
+  background-color: lightgray;
+}
+
+ul.message-history > li {
+  background: seagreen;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  margin: 5px;
+}
+
+ul.message-history {
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+}
+
+#message-form {
+  height: 50px;
+  width: 67%;
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-around;
+  border-top: solid darkgray 0.5px;
+  border-bottom: solid darkgray 0.5px;
+  position: fixed;
+  bottom: 0;
+}
+
+.submit-button {
+  height: 25px;
+  border-radius: 20px;
+  margin: auto;
+  padding: 0px 15px;
+  border: solid darkgray 0.5px;
 }

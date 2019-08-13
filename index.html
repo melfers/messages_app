@@ -7,7 +7,7 @@
   </head>
   <body>
     <section id="contacts">
-      <ul>
+      <ul class="contact-list">
         <li>Steven Petryk</li>
         <li>Kayleigh Foley</li>
         <li>Matt Zaso</li>
@@ -17,17 +17,19 @@
     </section>
     <section id="messages">
       <div>
-        <ul>
+        <ul class="message-history">
           <li>Message 1</li>
           <li>Message 2</li>
           <li>Message 3</li>
           <li>Message 4</li>
         </ul>
       </div>
-      <form>
-        <input type="text" />
-        <input type="submit" text="Send" />
-      </form>
+      <div>
+        <form id="message-form">
+          <input type="text" id="message-field" />
+          <input type="submit" value="Send" class="submit-button" />
+        </form>
+      </div>
     </section>
   </body>
 </html>
