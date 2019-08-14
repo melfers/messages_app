@@ -41,9 +41,10 @@ ul {
 
 ul.contact-list > li {
   border-bottom: solid darkgray 0.5px;
-  padding: 5%;
-  max-height: 100px;
+  padding: 3%;
+  height: 100px;
   background-color: lightgray;
+  display: flex;
 }
 
 ul.message-history > li {
@@ -78,4 +79,14 @@ ul.message-history {
   margin: auto;
   padding: 0px 15px;
   border: solid darkgray 0.5px;
+}
+
+.user-icon {
+  max-height: 65px;
+  width: 65px;
+}
+
+p {
+  margin: auto 0px;
+  padding: 3%;
 }
