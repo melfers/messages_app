@@ -39,7 +39,7 @@ ul {
   padding: 0;
 }
 
-ul.contact-list > li {
+li.contact-list {
   border-bottom: solid darkgray 0.5px;
   padding: 3%;
   height: 100px;
@@ -47,12 +47,19 @@ ul.contact-list > li {
   display: flex;
 }
 
-ul.message-history > li {
-  background: seagreen;
-  color: white;
+li.message-history {
   border-radius: 5px;
   padding: 8px;
   margin: 5px;
+  display: flex;
+}
+
+li.message-history > p {
+  background-color: green;
+  color: white;
+  display: flex;
+  padding: 2%;
+  border-radius: 25px;
 }
 
 ul.message-history {
@@ -89,4 +96,14 @@ ul.message-history {
 p {
   margin: auto 0px;
   padding: 3%;
+}
+
+li.active {
+  background-color: #606060;
+  color: white;
+}
+
+li.host-message > p {
+  background-color: blue;
+  justify-content: flex-end;
 }
