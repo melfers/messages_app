@@ -1,109 +1,116 @@
-* {
-  box-sizing: border-box;
-  text-decoration: none;
-  list-style: none;
-  font-family: "Open Sans", sans-serif;
-}
-
-body,
-html {
-  height: 100%;
+/*
+ * Global styles
+ */
+​ body {
   margin: 0;
+  padding: 0;
+  font-family: system-ui;
+}
+​ * {
+  box-sizing: border-box;
+}
+​ input,
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  ​border: 0;
+  background: 0;
+  padding: 0.5rem;
+  font: inherit;
+}
+​ .visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
 }
 
-#contacts {
-  display: inline-block;
-  width: 33.33%;
-  border: solid darkgray 0.5px;
-  height: 100%;
+/* Main app styles*/
+
+.user-icon {
+  max-width: 4rem;
 }
 
-#messages {
-  float: right;
-  clear: all;
-  width: 66.66%;
-  min-height: 100%;
+body {
+  display: flex;
+  height: 100vh;
+  border: 1px solid;
 }
 
-#message-field {
-  width: 80%;
-  display: inline-block;
-  height: 25px;
-  border-radius: 10px;
-  margin: auto;
-  border: solid darkgray 0.5px;
+.contacts {
+  flex: 0 0 25rem;
+  border-inline-end: 1px solid;
 }
 
-ul {
+.messages {
+  flex: auto;
+}
+
+.contacts ul {
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-li.contact-list {
-  border-bottom: solid darkgray 0.5px;
-  padding: 3%;
-  height: 100px;
-  background-color: lightgray;
+.contacts li {
   display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-block-end: 1px solid;
 }
 
-li.message-history {
+.contacts li > * + * {
+  margin-inline-start: 1rem;
+}
+
+.message-form {
+  display: flex;
+  padding: 1rem;
+  border-block-start: 1px solid;
+}
+
+.message-form > * + * {
+  margin-inline-start: 1rem;
+}
+
+.message-field {
+  flex: auto;
+}
+
+.message-field,
+.submit-button {
+  border: 1px solid;
   border-radius: 5px;
-  padding: 8px;
-  margin: 5px;
-  display: flex;
 }
 
-li.message-history > p {
-  background-color: green;
-  color: white;
-  display: flex;
-  padding: 2%;
-  border-radius: 25px;
-}
-
-ul.message-history {
-  margin: 2%;
+.message-history {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
 }
 
-#message-form {
-  height: 50px;
-  width: 67%;
-  background-color: lightgray;
-  display: flex;
-  justify-content: space-around;
-  border-top: solid darkgray 0.5px;
-  border-bottom: solid darkgray 0.5px;
-  position: fixed;
-  bottom: 0;
+.messages > * {
+  margin: 0;
 }
 
-.submit-button {
-  height: 25px;
-  border-radius: 20px;
-  margin: auto;
-  padding: 0px 15px;
-  border: solid darkgray 0.5px;
+.messages > * + * {
+  margin-block-start: 1rem;
 }
 
-.user-icon {
-  max-height: 65px;
-  width: 65px;
+.message {
+  border: 1px solid;
+  padding: 1rem;
+  max-width: 80%;
+  list-style: none;
 }
 
-p {
-  margin: auto 0px;
-  padding: 3%;
+.message.-from-user {
+  align-self: flex-start;
 }
 
-li.active {
-  background-color: #606060;
-  color: white;
-}
-
-li.host-message > p {
-  background-color: blue;
-  justify-content: flex-end;
+.message.-from-me {
+  align-self: flex-end;
 }

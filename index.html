@@ -10,7 +10,7 @@
     />
   </head>
   <body>
-    <section id="contacts">
+    <section class="contacts">
       <ul class="contact-list">
         <li class="active contact-list">
           <img src="./images/user.svg" class="user-icon" />
@@ -34,32 +34,30 @@
         </li>
       </ul>
     </section>
-    <section id="messages">
-      <div>
-        <ul class="message-history">
-          <li class="user-message message-history">
-            <p>Hi Molly!</p>
-          </li>
-          <li class="host-message message-history">
-            <p>Oh hi Steven!</p>
-          </li>
-          <li class="user-message message-history">
-            <p>
-              Have you heard from Detective Batman lately? I hear he's suffering
-              from IBS.
-            </p>
-          </li>
-          <li class="host-message message-history">
-            <p>He used to call my on my cell phone ...</p>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <form id="message-form">
-          <input type="text" id="message-field" />
-          <input type="submit" value="Send" class="submit-button" />
-        </form>
-      </div>
+    <section class="messages">
+      <ul class="message-history">
+        <li class="message -from-user">
+          <p>Hi Molly!</p>
+        </li>
+        <li class="message -from-me">
+          <p>Oh hi Steven!</p>
+        </li>
+        <li class="message -from-user">
+          <p>
+            Have you heard from Detective Batman lately? I hear he's suffering
+            from IBS.
+          </p>
+        </li>
+        <li class="message -from-me">
+          <p>He used to call my on my cell phone ...</p>
+        </li>
+      </ul>
+      <form class="message-form">
+        <input type="text" class="message-field" />
+        <input type="submit" value="Send" class="submit-button" />
+      </form>
     </section>
+    <script src="data.js"></script>
+    <script src="scripts.js"></script>
   </body>
 </html>
