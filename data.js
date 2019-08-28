@@ -1,4 +1,4 @@
-const data = [
+let data = [
   {
     id: 1,
     participants: [
@@ -14,6 +14,114 @@ const data = [
       }
     ],
     messages: [
+      {
+        sentAt: "",
+        sender: {
+          id: 1,
+          name: "Molly Elfers",
+          picture: "images/user.svg"
+        },
+        content: "Hi Steven!"
+      },
+      {
+        sentAt: "",
+        sender: {
+          id: 2,
+          name: "Steven Petryk",
+          picture: "images/user.svg"
+        },
+        content: "Hi Molly"
+      },
+      {
+        sentAt: "",
+        sender: {
+          id: 1,
+          name: "Molly Elfers",
+          picture: "images/user.svg"
+        },
+        content: "Hi Steven!"
+      },
+      {
+        sentAt: "",
+        sender: {
+          id: 2,
+          name: "Steven Petryk",
+          picture: "images/user.svg"
+        },
+        content: "Hi Molly"
+      },
+      {
+        sentAt: "",
+        sender: {
+          id: 1,
+          name: "Molly Elfers",
+          picture: "images/user.svg"
+        },
+        content: "Hi Steven!"
+      },
+      {
+        sentAt: "",
+        sender: {
+          id: 2,
+          name: "Steven Petryk",
+          picture: "images/user.svg"
+        },
+        content: "Hi Molly"
+      },
+      {
+        sentAt: "",
+        sender: {
+          id: 1,
+          name: "Molly Elfers",
+          picture: "images/user.svg"
+        },
+        content: "Hi Steven!"
+      },
+      {
+        sentAt: "",
+        sender: {
+          id: 2,
+          name: "Steven Petryk",
+          picture: "images/user.svg"
+        },
+        content: "Hi Molly"
+      },
+      {
+        sentAt: "",
+        sender: {
+          id: 1,
+          name: "Molly Elfers",
+          picture: "images/user.svg"
+        },
+        content: "Hi Steven!"
+      },
+      {
+        sentAt: "",
+        sender: {
+          id: 2,
+          name: "Steven Petryk",
+          picture: "images/user.svg"
+        },
+        content: "Hi Molly"
+      },
+      {
+        sentAt: "",
+        sender: {
+          id: 1,
+          name: "Molly Elfers",
+          picture: "images/user.svg"
+        },
+        content: "Hi Steven!"
+      },
+      {
+        sentAt: "",
+        sender: {
+          id: 2,
+          name: "Steven Petryk",
+          picture: "images/user.svg"
+        },
+        content: "Hi Molly"
+      },
       {
         sentAt: "",
         sender: {
@@ -51,3 +159,5 @@ const data = [
     messages: []
   }
 ];
+
+data = [...data, ...data, ...data, ...data, ...data];

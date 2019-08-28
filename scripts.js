@@ -7,23 +7,21 @@ function renderConversationList(conversations) {
         return participant.name;
       });
       return `
-        <li class="contact-list">
-          <img src="./images/user.svg" class="user-icon" />
-          <p>${participantNames.join(", ")}</p>
+        <li class="contact" id="conversation-${conversation.id}">
+          <a href="#${conversation.id}">
+            <img src="./images/user.svg" class="user-icon" />
+            <p>${participantNames.join(", ")}</p>
+          </a>
         </li>`;
     })
     .join("");
 }
 
-document.querySelector(".contact-list").innerHTML = renderConversationList(
-  data
-);
-
 // Renders a list of messages upon selecting a conversation
 
 function renderConversation(conversations, conversationId) {
   const messageList = conversations.find(
-    conversation => conversation.id == conversationId
+    conversation => conversation.id.toString() == conversationId
   ).messages;
 
   return messageList
@@ -43,7 +41,25 @@ function renderConversation(conversations, conversationId) {
     .join("");
 }
 
-document.querySelector(".message-history").innerHTML = renderConversation(
-  data,
-  1
-);
+window.addEventListener("hashchange", () => {
+  loadConversation(window.location.hash.substring(1));
+});
+
+function loadConversation(conversationId) {
+  document.querySelector(".message-history").innerHTML = renderConversation(
+    data,
+    conversationId
+  );
+
+  document.querySelector(".active-convo").classList.remove(".active-convo");
+}
+
+function loadConversationList() {
+  document.querySelector(".contact-list").innerHTML = renderConversationList(
+    data
+  );
+}
+
+loadConversationList();
+
+loadConversation(window.location.hash.substring(1));
