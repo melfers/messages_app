@@ -159,5 +159,3 @@ let data = [
     messages: []
   }
 ];
-
-data = [...data, ...data, ...data, ...data, ...data];

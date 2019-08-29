@@ -7,12 +7,12 @@ function renderConversationList(conversations) {
         return participant.name;
       });
       return `
+      <a href="#${conversation.id}">    
         <li class="contact" id="conversation-${conversation.id}">
-          <a href="#${conversation.id}">
             <img src="./images/user.svg" class="user-icon" />
             <p>${participantNames.join(", ")}</p>
-          </a>
-        </li>`;
+        </li>
+      </a>`;
     })
     .join("");
 }
@@ -47,6 +47,13 @@ window.addEventListener("hashchange", () => {
 });
 
 function loadConversation(conversationId) {
+  let isActive = document.querySelector(".active-convo");
+  if (isActive !== null) {
+    isActive.classList.remove("active-convo");
+  }
+  document
+    .querySelector(`#conversation-${conversationId}`)
+    .classList.add("active-convo");
   document.querySelector(".message-history").innerHTML = renderConversation(
     data,
     conversationId
