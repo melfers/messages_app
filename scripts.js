@@ -41,6 +41,7 @@ function renderConversation(conversations, conversationId) {
     .join("");
 }
 
+// Listens for user click on conversation
 window.addEventListener("hashchange", () => {
   loadConversation(window.location.hash.substring(1));
 });
@@ -50,14 +51,43 @@ function loadConversation(conversationId) {
     data,
     conversationId
   );
-
-  document.querySelector(".active-convo").classList.remove(".active-convo");
 }
 
+// Inserts list of conversations into left sidebar
 function loadConversationList() {
   document.querySelector(".contact-list").innerHTML = renderConversationList(
     data
   );
+}
+
+// Adds a message to message history on user submit
+const submitButton = document.querySelector(".submit-button");
+
+submitButton.addEventListener("click", () => {
+  event.preventDefault();
+  let userText = document.querySelector(".message-field");
+  let currentConversation = window.location.hash.substring(1);
+  let messageData = {
+    sentAt: "",
+    sender: {
+      id: 1,
+      name: "Molly Elfers",
+      picture: "images/user.svg"
+    },
+    content: userText.value
+  };
+
+  addMessageToData(data, currentConversation, messageData);
+  userText.value = "";
+});
+
+function addMessageToData(conversations, conversationId, message) {
+  let currentConversation = conversations.find(
+    conversation => conversation.id.toString() == conversationId
+  );
+
+  currentConversation.messages.push(message);
+  loadConversation(window.location.hash.substring(1));
 }
 
 loadConversationList();
